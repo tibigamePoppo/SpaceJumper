@@ -7,6 +7,7 @@ namespace ingame
     public class PlayerMove : MonoBehaviour
     {
         Rigidbody2D rb2D;
+        public bool useJetPack { private set; get; } = false;
         [SerializeField]
         private float jetPackPower;
         [SerializeField]
@@ -21,7 +22,12 @@ namespace ingame
         {
             if(Input.GetKey(KeyCode.Space))
             {
+                useJetPack = true;
                 rb2D.AddForceAtPosition(transform.up * jetPackPower * Time.deltaTime, jetPackFirePosition.position);
+            }
+            else
+            {
+                useJetPack = false;
             }
         }
     }
