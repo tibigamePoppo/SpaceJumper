@@ -22,6 +22,8 @@ public class meat : MonoBehaviour
             EffectManager.Instance.InstanceEffect(EffectType.MeatGet,transform.position);
             if (meatFake) SeManager.Instance.ShotSe(SeType.FakeMeatGet);
             else SeManager.Instance.ShotSe(SeType.GenuineMeatGet);
+
+            FindObjectOfType<GameStateManager>().GetMeat.Invoke();
         }
     }
 }

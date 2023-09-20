@@ -10,8 +10,6 @@ namespace System
         [SerializeField,Tooltip("ˆÚ“®æ‚ÌƒV[ƒ“‚ğİ’è")]
         private SceneObject targetScene;
 
-
-
         public void OnChange()
         {
             SceneManager.LoadScene(targetScene);

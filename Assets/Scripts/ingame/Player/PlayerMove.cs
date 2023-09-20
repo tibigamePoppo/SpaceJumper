@@ -12,15 +12,16 @@ namespace ingame
         private float jetPackPower;
         [SerializeField]
         private Transform jetPackFirePosition;
+        GameStateManager manager;
         void Start()
         {
             rb2D = GetComponent<Rigidbody2D>();
+            manager = FindObjectOfType<GameStateManager>();
         }
 
-        // Update is called once per frame
         void FixedUpdate()
         {
-            if(Input.GetKey(KeyCode.Space))
+            if(Input.GetKey(KeyCode.Space) && manager.currentState == GameStateManager.gameState.ingame)
             {
                 useJetPack = true;
                 rb2D.AddForceAtPosition(transform.up * jetPackPower * Time.deltaTime, jetPackFirePosition.position);
