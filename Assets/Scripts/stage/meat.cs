@@ -5,8 +5,6 @@ using System.Effect;
 
 public class meat : MonoBehaviour
 {
-    [SerializeField]
-    private bool meatFake = true;
     void Start()
     {
         transform.DOMoveY(0.2f,1).SetLoops(-1,LoopType.Yoyo).SetEase(Ease.InOutSine).SetRelative();
@@ -20,8 +18,7 @@ public class meat : MonoBehaviour
         {
             Debug.Log("イノシシ肉をゲット");
             EffectManager.Instance.InstanceEffect(EffectType.MeatGet,transform.position);
-            if (meatFake) SeManager.Instance.ShotSe(SeType.FakeMeatGet);
-            else SeManager.Instance.ShotSe(SeType.GenuineMeatGet);
+            SeManager.Instance.ShotSe(SeType.FakeMeatGet);
 
             FindObjectOfType<GameStateManager>().GetMeat.Invoke();
         }

@@ -6,7 +6,7 @@ public class StageManager : MonoBehaviour
 {
     [SerializeField]
     private List<GameObject> StageObjects;
-    void Start()
+    void Awake()
     {
         foreach (var item in StageObjects)
         {
