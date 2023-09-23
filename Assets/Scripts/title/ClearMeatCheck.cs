@@ -1,31 +1,35 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ClearMeatCheck : MonoBehaviour
+namespace Title
 {
-    [SerializeField]
-    private int StageNum;
-    [SerializeField]
-    private Sprite ClearMeat;
-    void Start()
+    public class ClearMeatCheck : MonoBehaviour
     {
-        Image MeatImage = GetComponent<Image>();
-        switch (StageNum)
+        [SerializeField]
+        private int StageNum;
+        [SerializeField]
+        private Sprite ClearMeat;
+        void Start()
         {
-            case 1:
-                if (Configs.Stage1Clear) MeatImage.sprite = ClearMeat;
-                break;
-            case 2:
-                if (Configs.Stage2Clear) MeatImage.sprite = ClearMeat;
-                break;
-            case 3:
-                if (Configs.Stage3Clear) MeatImage.sprite = ClearMeat;
-                break;
-            case 4:
-                if (Configs.Stage4Clear) MeatImage.sprite = ClearMeat;
-                break;
-            default:
-                break;
+            Image MeatImage = GetComponent<Image>();
+            switch (StageNum)
+            {
+                case 1:
+                    if (Configs.Stage1Clear) MeatImage.sprite = ClearMeat;
+                    break;
+                case 2:
+                    if (Configs.Stage2Clear) MeatImage.sprite = ClearMeat;
+                    break;
+                case 3:
+                    if (Configs.Stage3Clear) MeatImage.sprite = ClearMeat;
+                    break;
+                case 4:
+                    if (Configs.Stage4Clear) MeatImage.sprite = ClearMeat;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
