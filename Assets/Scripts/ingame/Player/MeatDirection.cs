@@ -1,22 +1,25 @@
+using Ingame.Stage;
 using UnityEngine;
-
-public class MeatDirection : MonoBehaviour
+namespace Ingame.Player
 {
-    Transform meatPosition;
-    void Start()
+    public class MeatDirection : MonoBehaviour
     {
-        SetMeatPosition();
-    }
+        Transform meatPosition;
+        void Start()
+        {
+            SetMeatPosition();
+        }
 
-    public void SetMeatPosition()
-    {
-        meatPosition = FindObjectOfType<meat>().gameObject.transform;
-    }
+        public void SetMeatPosition()
+        {
+            meatPosition = FindObjectOfType<meat>().gameObject.transform;
+        }
 
-    void FixedUpdate()
-    {
-        Vector3 dir = meatPosition.transform.position - transform.position;
-        transform.rotation = Quaternion.FromToRotation(Vector3.up, dir);
-    }
+        void FixedUpdate()
+        {
+            Vector3 dir = meatPosition.transform.position - transform.position;
+            transform.rotation = Quaternion.FromToRotation(Vector3.up, dir);
+        }
 
+    }
 }

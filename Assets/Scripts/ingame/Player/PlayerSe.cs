@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using Audio;
 
-namespace ingame
+namespace Ingame.Player
 {
     public class PlayerSe : MonoBehaviour
     {

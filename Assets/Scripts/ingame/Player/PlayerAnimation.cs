@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-namespace ingame
+namespace Ingame.Player
 {
     public class PlayerAnimation : MonoBehaviour
     {
